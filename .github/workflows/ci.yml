@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # Go builds the test server the tests run against, and runs buf.
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: testserver/go.mod
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+      - run: make check
+      - name: Check generated code is up to date
+        run: |
+          make gen
+          git diff --exit-code
