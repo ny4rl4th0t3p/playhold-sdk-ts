@@ -1,6 +1,6 @@
 # The playhold version this SDK is built for: its wire code comes from that version's proto, and its tests run against a
 # server on that version. testserver/go.mod must require the same one; make pin checks it.
-PLAYHOLD_VERSION := v0.3.0
+PLAYHOLD_VERSION := v0.4.0
 
 BUF_VERSION := v1.75.0
 BUF := go run github.com/bufbuild/buf/cmd/buf@$(BUF_VERSION)

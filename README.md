@@ -9,7 +9,7 @@ and joins the same room again.
 It isn't on npm. Install it from this repository, by tag, which needs `git`:
 
 ```bash
-npm install github:ny4rl4th0t3p/playhold-sdk-ts#v0.3.0
+npm install git+https://github.com/ny4rl4th0t3p/playhold-sdk-ts.git#v0.4.0
 ```
 
 ```ts
